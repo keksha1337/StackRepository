@@ -1,4 +1,11 @@
 #pragma once
+
+struct Node
+{
+	Node * next, *prev;
+	int value;
+};
+
 /**
 *  \brief Класс - реализация стека.
 *
@@ -6,13 +13,8 @@
 */
 class Stack
 {
-private:
-	int value;
-	int size;
-	Stack *next;
-
 public:
-	Stack(int value);
+	Stack(int size);
 	~Stack();
 
 	/**
@@ -37,7 +39,7 @@ public:
 	*   Вернёт последний элемент стека и НЕ удалит его.
 	*   @result последний элемент стека.
 	*/
-	int top();
+	int fetch();
 
 	/**
 	*   \brief Вернёт размер стека.
@@ -45,12 +47,13 @@ public:
 	*   Вернёт размер стека.
 	*   @result размер стека.
 	*/
-	int getSize();
+	int size();
 
-	/**
-	* \brief Выведет весь стек на экран.
-	*
-	*	Выводит весь стек на экран.
-	*/
-	void showAll();
+	void show();
+
+private:
+	Node *head;
+	int top;
+	int capacity;
 };
+

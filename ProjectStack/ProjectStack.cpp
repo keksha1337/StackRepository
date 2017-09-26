@@ -18,15 +18,6 @@ int main()
 	st->show();
 	cout << "Last:" << st->fetch() << endl;
 	
-	st->push(1);
-	st->push(2);
-	st->push(3); st->push(1);
-	st->push(2);
-	st->push(3); st->push(1);
-	st->push(2);
-	st->push(3);
-
-
 	getch();
     return 0;
 }
